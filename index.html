@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>医疗问诊</title>
+		<link rel="stylesheet" href="newweb.css" />
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+
+			#con{
+				position: relative;
+				width: 1360px;
+				height: 300px;
+				margin-left: 70px;
+				margin-top: 50px;
+			}
+			.con.ul{
+				position: absolute;
+				left: 0;
+				width: 1360px;
+				height: 150px;
+			}
+			li{
+				widows: 150px;
+				list-style: none;
+				float: left;
+				padding-right: 20px;
+				
+			}
+			img{
+				width: 150px;
+				height: 150px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+			#bu{
+				width: 400px;
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.bu{
+				height: 20px;
+				width: 30px;
+				margin: 0 50px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<div class="nav-box">
+				<span>医疗问诊</span>
+				<ul class="nav">
+					 <li><a href="首页1.html">首页</a></li>
+					 <li><a href="医疗问诊1.html">医疗问诊</a></li>
+					 <li><a href="关于我们1.html">联系我们</a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="banner">
+			欢迎使用医疗在线问诊
+		</div>
+		<div id="con">
+			<ul>
+				<li><img src="img/1.jpg" alt="" /></li>
+				<li><img src="img/2.jpg" alt="" /></li>
+				<li><img src="img/3.jpeg" alt="" /></li>
+				<li><img src="img/4.jpeg" alt="" /></li>
+				<li><img src="img/5.jpeg" alt="" /></li>
+				<li><img src="img/6.jpg" alt="" /></li>
+				<li><img src="img/7.jpg" alt="" /></li>
+				<li><img src="img/8.jpg" alt="" /></li>
+			</ul>
+
+		</div>
+		<div class="footbox">
+			来自于贵州医科大学(GMU)-2021级卓越工程师医电组 2023.9
+		</div>
+		<script type="text/x-javascript" src="js/jquery-3.7.1.min.js">
+			let oul=document.querySelector('con.ul');
+			oul.innerHTML +=oul.innerHTML;
+			let aLi=document.querySelectorAll('con.li');
+			let aBu=document.querySelectorAll('.bu')
+			oul.style.width=aLi[0].offsetWidth*aLi.length+'px';
+			let speed=-2;
+			let move = ()=>{
+				if(oul.offsetLeft<-oul.offsetWidth/2){
+					oul.style.left='0';
+				}
+				if(oul.offsetLeft>0){
+					oul.style.left=-oul.offsetWidth/2+'px';
+				}
+				oul.style.left=oul.offsetLeft+speed+'px';
+			}
+			let timer=setInterval(move,30);
+		</script>
+	</body>
+</html>
